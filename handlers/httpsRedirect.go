@@ -13,6 +13,5 @@ func HTTPSRedirect(w http.ResponseWriter, r *http.Request) {
 	}
 	log.Printf("redirect to: %s", target)
 	http.Redirect(w, r, target,
-		// see @andreiavrammsd comment: often 307 > 301
 		http.StatusTemporaryRedirect)
 }
