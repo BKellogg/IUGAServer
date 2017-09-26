@@ -30,6 +30,7 @@ func main() {
 
 	attachServiceFromENVToMux("IUGASITEADDR", "/", mux)
 	attachServiceFromENVToMux("IUGAEVENTSADDR", apiPathV1+"events", mux)
+	attachServiceFromENVToMux("NODEMICROSERVICEADDR", "/node", mux)
 
 	log.Printf("server is listening at %s...\n", addr)
 	log.Fatal(http.ListenAndServeTLS(addr, tlsCert, tlsKey, mux))
